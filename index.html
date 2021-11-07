@@ -43,7 +43,7 @@ h1 {
 
   </style>
   <body class="background">
-  <div class="content">
+  <div class="content" id="countdown">
     <h1>
       Pozostało
     </h1>
@@ -79,6 +79,14 @@ var countdownSec = document.getElementById("c-sec");
   minutes = parseInt(seconds_left / 60);
   seconds = parseInt(seconds_left % 60);
 
+if (seconds_left<=0)
+{
+document.getElementById("countdown").style.display = "none";
+clearInterval(window._int);
+console.log("d");
+}
+else
+{
   // format countdown string + set tag value
   if (days > 0)
     countdownDay.innerHTML = days + " dni, ";
@@ -95,8 +103,9 @@ var countdownSec = document.getElementById("c-sec");
     countdownMin.innerHTML = minutes + " minut";
   }
 }
+}
     upd();
-setInterval(upd, 1000);
+window._int=setInterval(upd, 1000);
   </script>
 
 </html>
