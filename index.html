@@ -63,8 +63,8 @@ var countdownMin = document.getElementById("c-min");
 var countdownSec = document.getElementById("c-sec");
 
 // update the tag with id "countdown" every 1 second
-setInterval(function() {
-
+    function upd()
+    {
   // find the amount of "seconds" between now and target
   var current_date = new Date().getTime();
   var seconds_left = (target_date - current_date) / 1000;
@@ -94,7 +94,9 @@ setInterval(function() {
   } else {
     countdownMin.innerHTML = minutes + " minut";
   }
-}, 1000);
+}
+    upd();
+setInterval(upd, 1000);
   </script>
 
 </html>
