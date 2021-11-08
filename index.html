@@ -91,16 +91,16 @@ else
   if (days > 0)
     countdownDay.innerHTML = days + " dni, ";
   else
-    countdownDay.innerHTML = days + " dni, ";
-  if (hours < 10) {
-    countdownHour.innerHTML = "0" + hours + " godzin i";
-  } else {
+    countdownDay.innerHTML = "";
+  if (hours > 0) {
     countdownHour.innerHTML = hours + " godzin i ";
-  }
-  if (minutes < 10) {
-    countdownMin.innerHTML = "0" + minutes + " minut";
   } else {
+    countdownHour.innerHTML = "";
+  }
+  if (minutes > 0) {
     countdownMin.innerHTML = minutes + " minut";
+  } else {
+    countdownMin.innerHTML = "mniej niż minuta";
   }
 }
 }
